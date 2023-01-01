@@ -4,17 +4,18 @@ import Card from './Card';
 function List(props) {
     const initialState = [];
     const [cards, setCards] = useState(initialState);
+    
     const handleUpdate = () => {
-        let updatedCards = cards.concat((<Card cards={cards} setCards={setCards}/>));
+        let newCard = (<Card cards={cards} setCards={setCards}/>);
+        let updatedCards = cards.concat(newCard);
         setCards(updatedCards);
     };
+    const cardMap = (card, index) => (<Card key={index} cards={cards} setCards={setCards}/>);
 
     return (
         <div className="List">
             List Title
-            <ul>
-                {cards}
-            </ul>
+            <ul>{cards.map(cardMap)}</ul>
             <button onClick={handleUpdate}>Add a card</button>
         </div>
     );
