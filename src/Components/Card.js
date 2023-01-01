@@ -9,7 +9,7 @@ function Card({index, cards, setCards}) {
 
     const handleRemove = () => {
         let newCards = [...cards];
-        newCards.pop(index);//this.props.key);
+        newCards.pop(index);
         setCards(newCards);
     }
     
