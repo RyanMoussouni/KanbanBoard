@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import Card from './Card';
 
 function Board(props) {
-    var initialState = [<li><textarea></textarea></li>];
+    var initialState = [];
     const [cards, setCards] = useState(initialState)
     return (
         <div className="Board">
@@ -9,7 +10,7 @@ function Board(props) {
             <ul>
                 {cards}
             </ul>
-            <button onClick={() => {setCards(cards.concat(<li><textarea></textarea></li>));}}>Click me!</button>
+            <button onClick={() => {setCards(cards.concat(<Card/>));}}>Add a card</button>
         </div>
     )
 }
