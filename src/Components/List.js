@@ -10,7 +10,7 @@ function List(props) {
         let updatedCards = cards.concat(newCard);
         setCards(updatedCards);
     };
-    const cardMap = (card, index) => (<Card key={index} cards={cards} setCards={setCards}/>);
+    const cardMap = (card, index) => (<Card key={index} index={index} cards={cards} setCards={setCards}/>);
 
     return (
         <div className="List">

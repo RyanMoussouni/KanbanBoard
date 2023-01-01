@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 
-function Card({cards, setCards}) {
+//todo: understand how to use something else than idx
+function Card({index, cards, setCards}) {
     const defaultLabel = 'DefaultLabel';
-    const defaultTitle = 'DefaultTitle';
+    const defaultTitle = `Card n° ${index}`;
     const [label, setLabel] = useState(defaultLabel);
     const [title, setTitle] = useState(defaultTitle);
 
     const handleRemove = () => {
         let newCards = [...cards];
-        newCards.pop();
+        newCards.pop(index);//this.props.key);
         setCards(newCards);
     }
     
