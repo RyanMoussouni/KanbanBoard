@@ -21,7 +21,7 @@ function Card({index, cards, setCards}) {
         setCards(newCards);
     };
     
-    return (<div>
+    return (<div draggable="true">
                 <div onClick={handleCardDetailsDisplay}>
                     <p>{label}</p>
                     <p>{title}</p>
