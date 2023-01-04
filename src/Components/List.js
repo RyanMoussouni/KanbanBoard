@@ -10,7 +10,10 @@ function List(props) {
         let updatedCards = cards.concat(newCard);
         setCards(updatedCards);
     };
-    const cardMap = (card, index) => (<Card key={index} index={index} cards={cards} setCards={setCards}/>);
+
+    const cardMap = (card, index) => (
+        <Card key={index} index={index} cards={cards} setCards={setCards}/>
+        );
 
     return (
         <div className="List">
@@ -18,7 +21,7 @@ function List(props) {
             <ul>{cards.map(cardMap)}</ul>
             <button onClick={handleUpdate}>Add a card</button>
         </div>
-    );
+        );
 }
 
 export default List;
